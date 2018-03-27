@@ -1,0 +1,362 @@
+/*
+ *  Dan Brown Comedy
+ *  Stylesheet - styles.css
+ *  
+ *  Corey Savage
+ */
+
+ /*
+  *     HTML5 display definitions
+  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+
+/*
+ *      Colors
+ */
+
+:root {
+  --blue: #2962ff;
+  --cyan: #0097a7;
+  --dark_blue: #0d47a1;
+  --red: #d50000;
+  --green: #4caf50;
+  --dark_green: #2e7d32;
+  --purple: #D58CDC;
+  --orange: #FFD77E;
+  --grey: rgba(175,175,175,.75);
+  --grey_text: rgba(175,175,175,.9);
+  --dark_grey_text: rgba(75,75,75,.9);
+  --white_text: rgba(255,255,255,.75);
+  --overlay: rgba(15,15,15,.6);
+  --border: rgba(0,0,0,.25);
+  --black: rgba(0,0,0,.6);
+}
+
+/************************************************************************************
+ *
+ *      Base 
+ *
+ ***********************************************************************************/
+
+html, body {
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+html {
+    font-size: 100%;
+    overflow-y: visible;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 100;
+    letter-spacing: .08em;
+    color: var(--white_text)
+}
+
+::-moz-selection { background: rgba(74,74,74,.8); color: #ffffff; text-shadow: none; }
+::selection { background: rgba(74,74,74,.8); color: #ffffff; text-shadow: none; }
+
+/*
+ *      Embedded Content
+ */
+
+/*
+ * Improve image quality when scaled in IE7: h5bp.com/d
+ * Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; background-repeat: no-repeat; max-width: 100%; max-height: 100%; float: right;}
+
+/* Correct overflow not hidden in IE9 */
+svg:not(:root) { overflow: hidden; }
+
+/*
+ *      Typography
+ */
+
+p {color: var(--grey_text)}
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/*
+ *     Tables
+ */
+
+table, th, td {
+    color: var(--grey_text);
+    padding: 4px;
+    text-align: center;
+}
+
+th {
+    font-weight: 500;
+}
+
+td {
+    font-weight: 300;
+}
+
+/*
+ *      Forms
+ */
+
+form {
+    flex-basis: 80%;
+}
+
+input[type=text], input[type=email], select, textarea {
+    padding: 8px 16px;
+    margin: 4px 0 8px;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    background-color: var(--overlay);
+    color: var(--white_text);
+}
+
+.short_input {
+    width: 32%;
+    min-width: 208px;
+}
+
+.long_input{
+    width: 100%;
+}
+
+textarea {
+    height: 24vh;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    outline-width: 0; 
+}
+
+input[type=submit] {
+    float: right;
+    background-color: var(--blue);
+    color: #ffffff;
+    padding: 8px 24px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+input[type=submit]:hover {
+    background-color: rgba(0,0,0,0);
+    font-weight: 400;
+}
+
+input[type=submit]:active {
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(160,160,160,.8);
+    color: rgba(160,160,160,.9);
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(185,185,185,.4) !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+    color: rgba(185,185,185,.4) !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: rgba(185,185,185,.4) !important;  
+}
+ 
+input:-ms-input-placeholder {  
+    color: rgba(185,185,185,.4) !important;  
+}
+
+/*
+ *      Links
+ */
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+  
+  transition: color 0.3s ease;
+}
+
+/*
+ *      Buttons
+ */
+
+button {
+    background-color: var(--red);
+    color: #ffffff;
+    padding: 8px 24px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: rgba(0,0,0,0);
+    font-weight: 400;
+}
+
+button:active {
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(160,160,160,.8);
+    color: rgba(160,160,160,.9);
+}
+
+button:focus {
+    outline: none;
+}
+
+/*
+ *      Headings
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    letter-spacing: 1.2px;
+}
+
+h1 {
+    font-size: 44px;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 400;
+    padding: 4px 0 0;
+}
+
+h3 {
+    font-size: 6vw;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-align: center;
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+
+h5 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+h6 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/************************************************************************************
+ *
+ *      Webpage Styles 
+ *
+ ***********************************************************************************/
+
+
+ /************************************************************************************
+ *
+ *      Responsive Design 
+ *
+ ***********************************************************************************/
+
+
+ /************************************************************************************
+ *
+ *      Print Styles and Helper Classes 
+ *
+ ***********************************************************************************/
+
+/*Inlined to avoid required HTTP connection: h5bp.com/r*/
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  /* a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  
+  canvas { display: none; }
+}
+
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
